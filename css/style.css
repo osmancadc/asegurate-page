@@ -591,6 +591,7 @@ ul {
 	height: 300px;
 	width: 100%;
 	background-position-x: -15px;
+	border-radius: 10%;
 }
 
 .member #member1{
