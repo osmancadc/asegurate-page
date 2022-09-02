@@ -276,14 +276,46 @@ ul {
 .header-section .logo {
 	float: left;
 	padding-top: 20px;
-	max-width: 10%;
+	max-width: 15%;
 }
+
+
 
 .header-section .logo img {
 	width: auto;
 	-webkit-transition: all 0.4s ease 0s;
 	-o-transition: all 0.4s ease 0s;
 	transition: all 0.4s ease 0s;
+}
+
+@media (max-width: 1280px) {
+	.header-section .logo {
+		float: left;
+		padding-top: 20px;
+		max-width: 20%;
+	}
+
+	.header-section .logo img {
+		width: auto;
+		-webkit-transition: all 0.4s ease 0s;
+		-o-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
+	}
+}
+
+@media (max-width: 760px) {
+	.header-section .logo {
+		float: left;
+		padding-top: 20px;
+		max-width: 100%;
+	}
+
+	.header-section .logo img {
+		width: 60%;
+		-webkit-transition: all 0.4s ease 0s;
+		-o-transition: all 0.4s ease 0s;
+		transition: all 0.4s ease 0s;
+	}
 }
 
 .header-section .menu-list {
@@ -487,7 +519,7 @@ ul {
 
 /* About contant */
 
-.center{
+.center {
 	margin-left: 25%;
 	margin-bottom: 0px;
 }
@@ -587,30 +619,30 @@ ul {
 	text-align: center;
 }
 
-.member .member-photo{
+.member .member-photo {
 	height: 300px;
 	width: 100%;
 	background-position-x: -15px;
 	border-radius: 10%;
 }
 
-.member #member1{
+.member #member1 {
 	background-image: url('../img/team/1.jpg');
 	background-size: cover;
 }
 
-.member #member2{
+.member #member2 {
 	background-image: url('../img/team/2.jpeg');
 	background-size: cover;
 	background-position-y: -50px;
 }
 
-.member #member3{
+.member #member3 {
 	background-image: url('../img/team/3.jpeg');
 	background-size: cover;
 }
 
-.member #member4{
+.member #member4 {
 	background-image: url('../img/team/4.jpeg');
 	background-size: cover;
 }
@@ -676,12 +708,26 @@ ul {
 	z-index: -1;
 }
 
-.form-class input[type="text"] {
+.form-class input[type="text"],
+.form-class input[type="email"],
+.form-class input[type="number"] {
 	width: 100%;
 	margin-bottom: 26px;
 	border: none;
 	background: #f6edfb;
 	padding: 17px 20px;
+}
+
+select {
+	width: 100%;
+	margin-bottom: 26px;
+	border: none;
+	background: #f6edfb;
+	padding: 17px 20px;
+}
+
+.form-class input[type="submit"] {
+	width: 50%;
 }
 
 .form-class input[type="text"]:focus,
@@ -1698,4 +1744,3 @@ ul {
 		margin-bottom: 20px;
 	}
 }
-

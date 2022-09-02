@@ -42,7 +42,7 @@
 		<div class="responsive"><i class="fa fa-bars"></i></div>
 		<nav>
 			<ul class="menu-list">
-				<li class="active"><a href="#home">Inicio</a></li>
+				<li class="active"><a href="#home" >Inicio</a></li>
 				<li><a href="#jumper1">Beneficios</a></li>
 				<li><a href="#jumper2">Nosotros</a></li>
 				<li><a href="#jumper3">Registrate</a></li>
@@ -126,18 +126,19 @@
 				</div>
 				<div class="row">
 					<div class="col-md-6">
-						<p>El 80% de los Colombianos realizan compras en internet,
-							de estos el 33% son victimas de estafas y casi el 60%
+						<p>¡El 80% de los Colombianos realizan compras en internet,
+							de estos el 33% son víctimas de estafas y casi el 60%
 							de las personas ha tenido una mala experiencia!</p>
 					</div>
 					<div class="col-md-6 phrase">
 						<br /><br /><br />
-						<p>En promedio son 500mil pesos que se roban en una estafa realizada por internet y es casi
-							seguro que tu conoces a alguien que ha sido victima de una estafa</p>
+						<p>En promedio son 500 mil pesos que se roban en una estafa realizada por internet y es casi
+							seguro que tú conoces a alguien que ha sido víctima de una estafa</p>
 					</div>
 					<div class="col-md-6 center">
 						<br /><br /><br />
-						<p>Al dia se hacen mas de 15 denuncias en las redes sociales, pero estas son olvidadas pasados unos dias</p>
+						<p>Al día se hacen más de 15 denuncias en las redes sociales, pero estas son olvidadas pasados
+							unos días</p>
 					</div>
 				</div>
 				<!-- popup imagen - Puede cambiar por un video promocional -->
@@ -255,7 +256,7 @@
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="section-title">
-				<h2> Conoce nuestro <span>equipo!</span></h2>
+				<h2> ¡Conoce nuestro <span>equipo!</span></h2>
 			</div>
 			<div class="row" style="text-align: center;align-items:center; ">
 				<div class="col-sm-3">
@@ -307,8 +308,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
-					<h2>Estas listo para hacer parte del cambio?</h2>
-					<p>Se una de las primeras personas en tener nuestra aplicación registrandote aqui abajo!</p>
+					<h2>¿Estás listo para hacer parte del cambio?</h2>
+					<p>¡Se una de las primeras personas en tener nuestra aplicación registrándote aquí abajo!</p>
 				</div>
 			</div>
 		</div>
@@ -325,30 +326,65 @@
 					<div class="section-title left">
 						<h2>Registrate</h2>
 					</div>
-					<p>Al llenar el formulario seras parte de nuestros primeros usuarios beta.
-						Los cuales contaran con varios beneficios en el futuro! </p>
+					<p>Al llenar el formulario serás parte de nuestros primeros usuarios beta.
+						¡Los cuales contaran con varios beneficios en el futuro!</p>
 					<h3 class="mt60">Osman Beltran Murcia</h3>
 					<p class="con-item">osman.beltran@asegurate.me</p>
 					<p class="con-item">+57 350 2052811</p>
+
+					<h3 class="mt60">Ximena Diaz Gasca</h3>
+					<p class="con-item">ximena.diaz@asegurate.me</p>
+					<p class="con-item">+57 350 6031994</p>
+
+
 				</div>
 				<!-- contact form -->
 				<div class="col-md-6 col-pull">
 					<form class="form-class" id="con_form">
 						<div class="row">
-							<div class="col-sm-6">
-								<input type="text" name="name" placeholder="Tu Nombre Completo">
+							<div class="col-sm-12">
+								<input type="text" name="name" placeholder="Nombre Completo">
 							</div>
 							<div class="col-sm-6">
-								<input type="text" name="email" placeholder="Numero De Celular">
+								<input type="number" name="age" min="18" max="70" placeholder="Edad">
+							</div>
+							<div class="col-sm-6">
+								<input type="text" name="cellphone" placeholder="Numero De Celular">
 							</div>
 							<div class="col-sm-12">
 								<input type="text" name="email" placeholder="Correo Electronico">
 							</div>
 							<div class="col-sm-12">
-								<input type="text" name="subject" placeholder="Subject">
-								<textarea name="message"
-									placeholder="Comentarios & Recomendaciones que tengas para el equipo"></textarea>
-								<button class="site-btn">Enviar</button>
+								<input type="text" name="associate" placeholder="Referido">
+							</div>
+
+							<div class="col-sm-12">
+								<label for="smartphone">¿Tienes Smartphone?</label>
+								<select id="smartphone" name="smartphone">
+									<option value="1">SI</option>
+									<option value="0">NO</option>
+								</select>
+							</div>
+
+							<div class="col-sm-12">
+								<label for="os">¿Que Smartphone Tienes?</label>
+								<select id="os" name="os">
+									<option value="1">Android</option>
+									<option value="2">IOS/Apple</option>
+									<option value="3">Otro</option>
+								</select>
+							</div>
+
+
+							<div class="col-sm-12">
+								<textarea name="message" style="max-height: 130px;margin-bottom: 0;"
+									onblur="textCounter(this,this.form.counter,255);"
+									onkeyup="textCounter(this,this.form.counter,255);"
+									placeholder="Comentarios & Recomendaciones que tengas para el equipo">
+								</textarea>
+								<p style="float: right; margin-top:0; margin-bottom: 10px;"><span
+										id="remaining">255</span>/255 caracteres restantes</p>
+								<input class="site-btn center" type="submit" value="Enviar">
 							</div>
 						</div>
 					</form>
@@ -365,7 +401,30 @@
 	</footer>
 	<!-- Footer section end -->
 
+	<!-- Modal confirmation -->
+	<div class="modal fade" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h3 style="text-align: center; color:#641fb1;">Usuario registrado correctamente</h3>
+				</div>
+			</div>
+		</div>
+	</div>
 
+
+	<!-- Modal error -->
+	<div class="modal fade" id="error-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+		aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<h3 style="text-align: center; color:#FF4444;">Error registrando usuario</h3>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 	<!--====== Javascripts & Jquery ======-->

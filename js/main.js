@@ -134,16 +134,64 @@ function progressCircle() {
 	});
 
 }
+window.history.pushState({}, "", '/')
+window.addEventListener("hashchange", () => window.history.pushState({}, "", '/'), {});
+
+$("#con_form").submit(function (event) {
+	event.preventDefault();
+
+	event = event.currentTarget
+
+	const body = {
+		"name": event[0].value,
+		"age": parseInt(event[1].value),
+		"cellphone": event[2].value,
+		"email": event[3].value,
+		"associate": event[4].value,
+		"smartphone": event[5].value === "1",
+		"os": event[6].value,
+		"commentary": event[7].value
+	}
+
+	$.post("https://pftfkfuts5.execute-api.us-east-1.amazonaws.com/prod/beta-registration", JSON.stringify(body),
+		(data, status) => {
+			if (status == "success") {
+				$("#success-modal").modal()
+				setTimeout(() => {
+					$("#success-modal").modal("toggle")
+				}, 1000)
+			} else {
+				$("#error-modal").modal()
+				setTimeout(() => {
+					$("#error-modal").modal("toggle")
+				}, 1000)
+			}
+		})
+
+});
+
+
+
+function textCounter(field, countfield, maxlimit) {
+
+	if (field.value.length > maxlimit) {
+		field.value = field.value.substring(0, maxlimit);
+		field.blur();
+		field.focus();
+	} else {
+		$("#remaining").html(maxlimit - field.value.length)
+	}
+}
 
 (function ($) {
 	// Call all functions
 	loader();
 	responsive();
 	heroSection();
-	testimonial();
-	progressbar();
 	videoPopup();
 	accordions();
 	progressCircle();
+
+
 
 })(jQuery);
